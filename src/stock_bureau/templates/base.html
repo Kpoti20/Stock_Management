@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<!--begin::Head-->
+	{% include "snippets/header.html" %}
+	<head>
+		<meta charset="utf-8" />
+		<title>STOCK | {% block title %}{% endblock %}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% include "snippets/header.html" %}
+	</head>
+	<!--end::Head-->
+	{% load static %}
+	<!--begin::Body-->
+	<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed
+	toolbar-tablet-and-mobile-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+		<!--begin::Main-->
+		<!--begin::Root-->
+		<div class="d-flex flex-column flex-root">
+			<!--begin::Page-->
+			<div class="page d-flex flex-row flex-column-fluid">
+				<!--begin::Aside-->
+				{% include "snippets/aside.html" %}
+				<!--end::Aside-->
+				<!--begin::Wrapper-->
+				<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+					<!--begin::Header-->
+					<div id="kt_header" style="background-color: #80cbc4;" class="header align-items-stretch">
+						<!--begin::Container-->
+						<div class="container-fluid d-flex align-items-stretch justify-content-between">
+
+							<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+								<a href="{% url 'home' %}" class="d-lg-none">
+									<img alt="Logo" src="{% static 'stock_bureau/assets1/media/logos/logo-3.svg' %}" class="h-30px" />
+								</a>
+							</div>
+							<!--end::Mobile logo-->
+							<!--begin::Wrapper-->
+							<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+								<!--begin::Navbar-->
+								<div class="d-flex align-items-stretch" id="kt_header_nav">
+									<!--begin::Menu wrapper-->
+									<div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu"
+										 data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
+										 data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end"
+										 data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true"
+										 data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
+										<!--begin::Menu-->
+										<div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700
+										menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400
+										fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
+											<div class="menu-item me-lg-1">
+												<a class="menu-link active py-3" href="{% url 'home' %}">
+													<span class="svg-icon svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+															 class="bi bi-house-door" viewBox="0 0 16 16">
+														  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+														</svg>
+													</span>
+												</a>
+											</div>
+
+										</div>
+										<!--end::Menu-->
+									</div>
+									<!--end::Menu wrapper-->
+								</div>
+
+								<div class="d-flex align-items-center">
+										<span>Bonjour,</span>
+										<a class="btn nav-link dropdown-toggle" data-toggle="dropdown" style="margin-left:-10px; text-decoration:none; color:black"
+										   href="#">{{request.user.nom }} {{request.user.prenom }} ({{request.user.pseudo}})</a>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="#">Changer de mot de passe</a>
+											<a class="dropdown-item" href="">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+													 class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+												  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+												  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+												</svg>
+												Déconnexion
+											</a>
+										</div>
+
+								</div>
+							</div>
+							<!--end::Wrapper-->
+						</div>
+						<!--end::Container-->
+					</div>
+					<!--end::Header-->
+					<!--begin::Content-->
+					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+						<!--begin::Toolbar-->
+						<div class="toolbar" id="kt_toolbar">
+							<!--begin::Container-->
+							<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+								<!--begin::Page title-->
+								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+									<!--begin::Title-->
+									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-6">{% block line1 %} {% endblock %}</h1>
+									<!--begin::Separator-->
+									<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+									<!--end::Separator-->
+										<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+
+										<li class="breadcrumb-item text-muted">
+											<small class="text-muted fs-7 fw-bold my-1 ms-1">{% block line2 %} {% endblock %}</small>
+										</li>
+										<li class="breadcrumb-item">
+
+										</li>
+										<span class="h-20px border-gray-200 text-dark fw-bolder my-1 fs-7 mx-2">{% block line3 %} {% endblock %}</span>
+
+										</ul>
+
+									<!--end::Description-->
+									<!--end::Title-->
+
+								</div>
+								<!--end::Page title-->
+								<!--begin::Actions-->
+
+								<div class="d-flex align-items-center py-1">
+									<!--begin::Wrapper-->
+									<!--end::Wrapper-->
+									<!--begin::Button-->
+									{% block line4 %} {% endblock %}
+									<!--end::Button-->
+								</div>
+								<!--end::Actions-->
+							</div>
+							<!--end::Container-->
+						</div>
+						<!--end::Toolbar-->
+						<!--begin::Post-->
+						<div class="post d-flex flex-column-fluid" id="kt_post">
+							<!--begin::Container-->
+							<!--begin::Container-->
+
+							{% block content %} {% endblock %}
+
+							<!--end::Container-->
+							<!--end::Container-->
+						</div>
+						<!--end::Post-->
+					</div>
+					<!--end::Content-->
+					<!--begin::Footer-->
+		{% include "snippets/footer.html" %}
+		{% block js %} {% endblock %}
+					<!--end::Javascript-->
+	</body>
+	<!--end::Body-->
+</html>

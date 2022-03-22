@@ -1,0 +1,96 @@
+{% load static %}
+		<script src="{% static 'stock_bureau/assets1/plugins/global/plugins.bundle.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/scripts.bundle.js' %}"></script>
+
+		<script src="{% static 'stock_bureau/assets1/js/datatables.bundle.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/export.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/list.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/add.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/widgets.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/chat.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/create-app.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/upgrade-plan.js' %}"></script>
+
+		<script src="{% static 'stock_bureau/assets1/js/jquery-3.6.0.min.js' %}"> </script>
+		<script src="{% static 'stock_bureau/assets1/js/sweet.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/popper.min.js' %}"></script>
+  		<script src="{% static 'stock_bureau/assets1/js/bootstrap.min.js' %}"></script>
+
+		<script src="{% static 'stock_bureau/assets1/js/jquery-3.5.1.js' %}"></script>
+		<script src="{% static 'stock_bureau/assets1/js/jquery.dataTables.min.js' %}"></script>
+  		<script src="{% static 'stock_bureau/assets1/js/dataTables.bootstrap5.min.js' %}"></script>
+
+		<script>
+			$(document).ready(function(){
+			  $("#navi").click(function(){
+				$("#navi .arrow-right").toggleClass("rtoate180");
+			  });
+			  $("#navi1").click(function(){
+				$("#navi1 .arrow-right").toggleClass("rtoate180");
+			  });
+			  $("#navi2").click(function(){
+				$("#navi2 .arrow-right").toggleClass("rtoate180");
+			  });
+			  $("#navi3").click(function(){
+				$("#navi3 .arrow-right").toggleClass("rtoate180");
+			  });
+			  $("#navi4").click(function(){
+				$("#navi4 .arrow-right").toggleClass("rtoate180");
+			  });
+			  $("#navi5").click(function(){
+				$("#navi5 .arrow-right").toggleClass("rtoate180");
+			  });
+			  $("#navi6").click(function(){
+				$("#navi6 .arrow-right").toggleClass("rtoate180");
+			  });
+			  $("#navi7").click(function(){
+				$("#navi7 .arrow-right").toggleClass("rtoate180");
+			  });
+			  $("#navi8").click(function(){
+				$("#navi8 .arrow-right").toggleClass("rtoate180");
+			  });
+			});
+			$(document).ready(function() {
+				$('#bootstapdatatable').DataTable({
+						"aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+						"iDisplayLength": 3,
+						"language": {
+							    "sProcessing":     "Traitement en cours...",
+								"sSearch":         "Rechercher&nbsp;:",
+								"sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
+								"sInfo":           "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+								"sInfoEmpty":      "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ment",
+								"sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+								"sInfoPostFix":    "",
+								"sLoadingRecords": "Chargement en cours...",
+								"sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+								"sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
+								"oPaginate": {
+									"sFirst":      "Premier",
+									"sPrevious":   "Pr&eacute;c&eacute;dent",
+									"sNext":       "Suivant",
+									"sLast":       "Dernier"
+								},
+								"oAria": {
+									"sSortAscending":  ": activer pour trier la colonne par ordre croissant",
+									"sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+								},
+								"select": {
+										"rows": {
+											_: "%d lignes sÃ©lÃ©ctionnÃ©es",
+											0: "Aucune ligne sÃ©lÃ©ctionnÃ©e",
+											1: "1 ligne sÃ©lÃ©ctionnÃ©e"
+										}
+								}
+						 }
+					}
+				);
+			});
+		</script>
+
+		<script>
+			{% for msg in messages %}
+			   swal('{{ msg }}')
+			{% endfor %}
+		</script>
+
